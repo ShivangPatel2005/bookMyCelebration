@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <style>
+        section {
+            padding: 30px;
+            background-color: #91bfff;
+        }
+    </style>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <style>
+            #NavBar {
+                background-color: #b1ff97;
+            }
+        </style>
+        <section>
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="abc" value="">
+                <label for="firstName">First name</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="xyz" value="">
+                <label for="lastName">Last name</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="tel" class="form-control" id="phNumber" placeholder="+91999999999" name="phNumber" value="">
+                <label for="phNumber">Phone number</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="emailIn" placeholder="name@example.com" name="emailIn" value="">
+                <label for="floatingInput">Email address</label>
+            </div>
+        </section>
+        <%- include("footer") %>
+</body>
+
+</html>

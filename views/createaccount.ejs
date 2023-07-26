@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap" rel="stylesheet">
+    <title>Create Account</title>
+    <style>
+        #webSiteLogo {
+            margin-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        section {
+            width: 37%;
+            margin: 30px auto 50px auto;
+            padding: 30px 40px 30px 40px;
+            border-width: 3px;
+            border-color: #ada1ff;
+            border-style: solid;
+            border-radius: 20px;
+            box-shadow: 4px 4px #ada1ff;
+        }
+        
+        #CAHead {
+            font-family: 'Belanosima', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #NavBar {
+            background-color: #ada1ff;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('header') %>
+        <img src="webSiteLogo.png" alt="WebSite Logo" height="60px" id="webSiteLogo">
+        <section>
+            <h2 id="CAHead">Create Account</h2>
+            <form action="/Createaccount" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstNameCA" placeholder="ABC" name="firstNameCA">
+                    <label for="firstNameCA">First name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastNameCA" placeholder="XYZ" name="lastNameCA">
+                    <label for="lastNameCA">Last name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="phNumberCA" placeholder="+91 9999999999" name="phNumberCA">
+                    <label for="phNumberCA">Contact no.</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailCA" placeholder="example@email.com" name="emailCA">
+                    <label for="emailCA">Email address</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="passwordCA" placeholder="Password" name="passwordCA">
+                    <label for="passwordCA">Password</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="passwordCAVerift" placeholder="Password" name="passwordCAVerify">
+                    <label for="passwordCAVerify">Confirm Password</label>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-outline-primary" style="font-weight: 700;">Sign Up</button>
+                    <button type="reset" class="btn btn-outline-primary mt-3" style="font-weight: 700;">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <%- include('footer') %>
+</body>
+
+</html>
