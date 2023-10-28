@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <style>
+        #webSiteLogo {
+            margin-top: 70px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        section {
+            width: 80%;
+            margin: 30px auto 50px auto;
+            padding: 30px 40px 30px 40px;
+            border-width: 3px;
+            border-color: #b1ff97;
+            border-style: solid;
+            border-radius: 15px;
+            box-shadow: 10px 10px 20px #64dc3c;
+        }
+        
+        #PFHead {
+            font-family: 'Belanosima', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: left;
+            font-size: 35px;
+            color: rgb(64, 118, 255);
+        }
+        
+        #NavBar {
+            background-color: #b1ff97;
+        }
+        
+        #footerTag {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <img src="webSiteLogo.png" alt="WebSite Logo" height="60px" id="webSiteLogo">
+        <section>
+            <%  if(flag == 1) { %>
+                <div class="alert alert-success" role="alert">Your profile is successfully updated.</div>
+                <% } %>
+                    <div class="container text-center">
+                        <div class="row align-items-start mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <h2 id="PFHead">
+                                        Profile
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 17 17" style="margin-bottom: 4px;">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                                </svg>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/Profile" method="post">
+                        <div class="container text-center">
+                            <div class="row align-items-start mb-3">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="firstNamePF" placeholder="ABC" name="firstNamePF" value="<%= log.firstname %>" style="letter-spacing: 1px">
+                                        <label for="firstNamePF">First name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lastNamePF" placeholder="ABC" name="lastNamePF" value="<%= log.lastname %>" style="letter-spacing: 1px">
+                                        <label for="lastNamePF">Last name</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <div class="row align-items-start mb-3">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="emailPF" placeholder="ABC" name="emailPF" value="<%= log.email %>" style="letter-spacing: 1px">
+                                        <label for="emailPF">Email address</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="addressPF" placeholder="ABC" name="addressPF" value="<%= log.Address %>" style="letter-spacing: 1px" spellcheck="false">
+                                        <label for="addressPF">Address</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <div class="row align-items-start mb-3">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="phnoPF" placeholder="ABC" name="phnoPF" value="<%= log.contactno %>" style="letter-spacing: 1px" maxlength="10" minlength="10">
+                                        <label for="phnoPF">Phone number</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group has-validation">
+                                        <div class="form-floating is-invalid">
+                                            <input type="password" class="form-control" id="passwordPF" placeholder="Password" required name="passwordPF" value="<%= log.password %>">
+                                            <label for="passwordPF">Password</label>
+                                        </div>
+                                        <button style="border-radius: 10px; cursor:pointer;" onclick="showPass();" type="button" class="input-group-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 17 17" style="margin-bottom: 2px;">
+                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <div class="row align-items-start mt-4">
+                                <div class="col">
+                                    <div class="d-grid gap-1">
+                                        <button class="btn btn-primary btn-lg" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+        </section>
+        <%- include("footer") %>
+</body>
+<script>
+    function showPass() {
+        const x = document.getElementById("passwordPF");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+</html>

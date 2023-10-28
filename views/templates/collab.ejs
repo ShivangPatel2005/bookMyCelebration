@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        #collabSec {
+            background-color: #cbdfdb;
+            padding-top: 110px;
+            padding-right: 230px;
+            padding-left: 230px;
+            padding-bottom: 140px;
+        }
+        
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .card-title {
+            font-weight: 600;
+        }
+        
+        #NavBar {
+            background-color: #96c7ca;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 20, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("header2") %>
+        <section id="collabSec">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-header" style="background-color: #96c7ca;">
+                                <span class="material-symbols-outlined">speaker</span>
+                                <span class="material-symbols-outlined">view_in_ar</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">A/V system</h5>
+                                <p class="card-text">Seeking fellow music enthusiasts to join forces and make melodies that resonate with the world.</p>
+                                <a href="/collabForms?i=0" class="btn btn-primary">A/V system service</a>
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-header" style="background-color: #96c7ca;">
+                                <span class="material-symbols-outlined"> restaurant </span>
+                                <span class="material-symbols-outlined"> restaurant_menu </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Catering</h5>
+                                <p class="card-text">Admiring to passionate foodies to cook up a storm and delight taste buds together.</p>
+                                <a href="/collabForms?i=1" class="btn btn-primary">Catering service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-header" style="background-color: #96c7ca;">
+                                <span class="material-symbols-outlined"> living </span>
+                                <span class="material-symbols-outlined"> design_services </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> Decorator </h5>
+                                <p class="card-text">Let's transform spaces with our creative flair and craft unforgettable decor.</p>
+                                <a href="/collabForms?i=2" class="btn btn-primary">Decoration service</a>
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-header" style="background-color: #96c7ca;">
+                                <span class="material-symbols-outlined"> add_a_photo </span>
+                                <span class="material-symbols-outlined"> camera </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> Photography </h5>
+                                <p class="card-text">Let's capture moments in pixels and paint stories with light.</p>
+                                <a href="/collabForms?i=3" class="btn btn-primary">Photography service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            @Copyright bookMyCelebration 2023 - All Right Reserved.
+        </div>
+</body>
+
+</html>

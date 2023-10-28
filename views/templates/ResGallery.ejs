@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>MyCelebrationGallery</title>
+    <link rel="stylesheet" href="style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <% if(access==0){ %>
+        <%- include("header") %>
+            <% } else if(access==1) { %>
+                <%- include("header2") %>
+                    <% } %>
+                        <div class="container">
+                            <div class="row mt-5" id="filter-buttons">
+                                <div class="col-12">
+                                    <button class="btn mb-2 me-1 active" data-filter="all">Show all</button>
+                                    <button class="btn mb-2 mx-1" data-filter="Social Events">Social Events</button>
+                                    <button class="btn mb-2 mx-1" data-filter="Birthday Celebration">Birthday Celebration</button>
+                                    <button class="btn mb-2 mx-1" data-filter="Corporate Events">Corporate Events</button>
+                                    <button class="btn mb-2 mx-1" data-filter="Education Events">Education Events</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row px-2 mt-4 gap-3" id="filterable-cards">
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social5.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Wedding Event</h6>
+                                        <p class="card-text">Palm Tree Resort</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social8.png" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Ring ceremony</h6>
+                                        <p class="card-text">My venue Resort</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social3.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Wedding Event</h6>
+                                        <p class="card-text">My venue Resort</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social1.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Pre-Wedding Ceremony</h6>
+                                        <p class="card-text">Retro Events</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social9.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Wedding</h6>
+                                        <p class="card-text">Celebrato Moments</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social6.png" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Haldi Ceremony</h6>
+                                        <p class="card-text">Palm Tree Resort</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social7.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Ring Ceremony</h6>
+                                        <p class="card-text">My venue Resort</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social2.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">My Decorators</h6>
+                                        <p class="card-text">By, bookMyCelebration</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Social Events">
+                                    <img src="photos/social4.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Wedding</h6>
+                                        <p class="card-text">Retro Events</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday1.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Happy Birthday Charley</h6>
+                                        <p class="card-text">Millenium Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday2.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Happy Birthday</h6>
+                                        <p class="card-text">Ashirwad Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday5.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">25th Anniversery</h6>
+                                        <p class="card-text">Decent dinings</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday4.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Happy One Year</h6>
+                                        <p class="card-text">Millenium Halls</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday6.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Happy Dinner</h6>
+                                        <p class="card-text">Green leaf Restaurants</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Birthday Celebration">
+                                    <img src="photos/birthday7.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Happy 10th Birthday</h6>
+                                        <p class="card-text">Four Seasons Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate1.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">IPL Auction</h6>
+                                        <p class="card-text">Hayatt Palace</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate2.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Annual Award Event</h6>
+                                        <p class="card-text">Millenium Banquets</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate3.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Gov. New Project Meeting</h6>
+                                        <p class="card-text">Re:genta Banquets</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate4.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Business Unites</h6>
+                                        <p class="card-text">Ashirwad Banquets</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate5.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Corporate Events</h6>
+                                        <p class="card-text">Hayatt palace</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate6.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Business Unites</h6>
+                                        <p class="card-text">Green Leaf Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Corporate Events">
+                                    <img src="photos/corporate7.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Managers Unites</h6>
+                                        <p class="card-text">Millenium Banquets</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Education Events">
+                                    <img src="photos/education1.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Seminar</h6>
+                                        <p class="card-text">Piramal Halls</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Education Events">
+                                    <img src="photos/education2.jpg" alt="img" height="215px ">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Project</h6>
+                                        <p class="card-text">Charusat campus</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Education Events">
+                                    <img src="photos/education3.jpg" alt="img">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Smart India Hackthon</h6>
+                                        <p class="card-text">CSPIT seminar Hall</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Education Events">
+                                    <img src="photos/education4.jpg" alt="img" height="215px" width="auto">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Hackthon Event</h6>
+                                        <p class="card-text">Motorola lab charusat</p>
+                                    </div>
+                                </div>
+                                <div class="card p-0" data-name="Education Events">
+                                    <img src="photos/education5.jpg" alt="img" height="215px" width="auto">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Expert session</h6>
+                                        <p class="card-text">Charusat Organization</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+                            * {
+                                font-family: "Poppins", sans-serif;
+                            }
+                            
+                            body {
+                                background-color: rgb(255, 255, 255);
+                            }
+                            
+                            body .container {
+                                background-color: #decfdfbd;
+                                max-width: 100%;
+                                padding-bottom: 100px;
+                                padding-left: 125px;
+                                padding-top: 1px;
+                                margin-left: -1px;
+                            }
+                            
+                            #NavBar {
+                                background-color: #ABC6FF;
+                            }
+                            
+                            #filter-buttons button {
+                                border-radius: 3px;
+                                background: #ABC6FF;
+                                border-color: transparent;
+                            }
+                            
+                            #filter-buttons button:hover {
+                                background: #e2bfe2;
+                                border-style: groove;
+                                border-color: #000000;
+                            }
+                            
+                            #filter-buttons button.active {
+                                color: #fff;
+                                background: #0d1387d9;
+                            }
+                            
+                            #filterable-cards .card {
+                                width: 17rem;
+                                border: 2px solid transparent;
+                                color: #000000;
+                                background-image: linear-gradient(to left top, #eaa1ea, #deadf3, #d3b7f8, #cbc1fa, #c6c9f9, #b7d2fe, #abd9fe, #a5e0fa, #99e9ee, #a4eed7, #c3f0bd, #ebecaa);
+                            }
+                            
+                            #filterable-cards .card.hide {
+                                display: none;
+                            }
+                            
+                            @media (max-width: 600px) {
+                                #filterable-cards {
+                                    justify-content: center;
+                                }
+                                #filterable-cards .card {
+                                    width: calc(100% / 2 - 10px);
+                                }
+                            }
+                        </style>
+                        <script>
+                            const filterButtons = document.querySelectorAll("#filter-buttons button");
+                            const filterableCards = document.querySelectorAll("#filterable-cards .card");
+
+
+                            const filterCards = (e) => {
+                                document.querySelector("#filter-buttons .active").classList.remove("active");
+                                e.target.classList.add("active");
+
+                                filterableCards.forEach(card => {
+
+                                    if (card.dataset.name === e.target.dataset.filter || e.target.dataset.filter === "all") {
+                                        return card.classList.replace("hide", "show");
+                                    }
+                                    card.classList.add("hide");
+                                });
+                            }
+
+                            filterButtons.forEach(button => button.addEventListener("click", filterCards));
+                        </script>
+                        <%- include("footer") %>
+</body>
+
+</html>

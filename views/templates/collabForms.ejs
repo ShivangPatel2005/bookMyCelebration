@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            background-image: url(Collab/AVSystem.jpg);
+            background-size: cover;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.946);
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 30px;
+            /* Decreased padding */
+            margin-top: 60px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        
+        h4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+        }
+        
+        .form-control:focus {
+            border-color: #e74c3c;
+            box-shadow: none;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3ce74a;
+        }
+        
+        #NavBar {
+            background-color: rgba(255, 255, 255, 0.725);
+            opacity: 0.99;
+        }
+        
+        footer {
+            background-color: white;
+            color: black;
+            opacity: 0.85;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include("header2") %>
+        <div class="container">
+            <% if(fType == 0){ %>
+                <h4>A/V service collabrator</h4>
+                <%} else if(fType == 1){ %>
+                    <h4>Catering service collabrator</h4>
+                    <% } else if(fType == 2){ %>
+                        <h4>Decoration service collabrator</h4>
+                        <% } else if(fType == 3){ %>
+                            <h4>Photography service collabrator</h4>
+                            <% } %>
+                                <% if(result == 1) { %>
+                                    <div class="alert alert-success" role="alert">Your collabration data is successfully added. <br> Thank you for register yourself.</div>
+                                    <style>
+                                        .container {
+                                            margin-top: 30px;
+                                        }
+                                    </style>
+                                    <% } %>
+                                        <form href="/collabForms?i=<%= fType %>" method="post">
+                                            <div class="form-group">
+                                                <label for="email">Email Address</label>
+                                                <input type="email" class="form-control" id="emailCollab" name="emailCollab" value="<%= log.email %>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="price">Service Price</label>
+                                                <input type="number" class="form-control" id="priceCollab" name="priceCollab" placeholder="Enter service price" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" class="form-control" id="locationCollab" name="locationCollab" placeholder="Enter location" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact">Contact Number</label>
+                                                <input type="tel" class="form-control" id="contactCollab" name="contactCollab" value="<%= log.contactno %>" maxlength="10" minlength="10">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message">Write something about your service</label>
+                                                <textarea class="form-control" id="serviceInfoCollab" name="serviceInfoCollab" rows="4" placeholder="Enter your serivce info" required></textarea>
+                                            </div>
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                                <button class="btn btn-primary" type="submit">Submit your request</button>
+                                            </div>
+                                        </form>
+        </div>
+        <%- include("footer") %>
+            <!-- Add Bootstrap JS and jQuery scripts here -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>

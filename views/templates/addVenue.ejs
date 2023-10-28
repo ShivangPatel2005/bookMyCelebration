@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        section {
+            width: 650px;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            border-width: 2px;
+            border-style: solid;
+            box-shadow: 20px 20px 10px gray;
+        }
+        
+        .form-group {
+            padding-bottom: 10px;
+        }
+        
+        label {
+            padding-bottom: 5px;
+        }
+        
+        h4 {
+            text-align: center;
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("header2") %>
+        <section>
+            <h4>Add new venue</h4>
+            <% if(result == 1) { %>
+                <div class="alert alert-success" role="alert">New venue details are successfully added.</div>
+                <style>
+                    section {
+                        margin-top: 00px;
+                    }
+                </style>
+                <% } %>
+                    <form href="/addVenue" method="post">
+                        <div class="form-group">
+                            <label for="venueEmail">Email Address</label>
+                            <input type="email" class="form-control" id="venueEmail" name="venueEmail" value="<%= log.email %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Venue name</label>
+                            <input type="text" class="form-control" id="venueName" name="venueName" placeholder="Enter venue name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="venueLocation">Location</label>
+                            <input type="text" class="form-control" id="venueLocation" name="venueLocation" placeholder="Enter venue location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="venueContact">Contact Number</label>
+                            <input type="tel" class="form-control" id="venueContact" name="venueContact" value="<%= log.contactno %>" maxlength="10" minlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="venueServiceInfo">Write something about service</label>
+                            <textarea class="form-control" id="venueServiceInfo" name="venueServiceInfo" rows="4" placeholder="Enter serivce info" required></textarea>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" type="submit">Add</button>
+                        </div>
+                    </form>
+        </section>
+        <div class="footer">
+            @Copyright bookMyCelebration 2023 - All Right Reserved.
+        </div>
+</body>
+
+</html>

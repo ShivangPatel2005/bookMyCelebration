@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+}
+
+body {
+    background: fixed;
+}
+
+.back {
+    background-color: beige;
+    background-image: url(../bookMycelebration/MyGallery/back2.jpg);
+    background-size: cover;
+    background-blend-mode: hard-light;
+}
+
+.heading {
+    color: rgb(78, 20, 99);
+    font-family: system-ui;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+    background-color: rgb(210, 158, 209);
+    border-bottom: 3px solid;
+    padding-bottom: 10px;
+}
+
+.img_gallery {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px;
+}
+
+.img_gallery img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.img_gallery img:hover {
+    transform: scale(0.9) rotate(0deg);
+    border-radius: 15px;
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+
+.full_img {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.full_img img {
+    width: 90%;
+    max-width: 500px;
+}
+
+.full_img span {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}

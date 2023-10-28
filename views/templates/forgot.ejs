@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap" rel="stylesheet">
+    <title>Forgot Account</title>
+    <style>
+        #webSiteLogo {
+            display: block;
+            margin: 50px auto 0px auto;
+        }
+        
+        #ForgotContainer {
+            width: 30%;
+            margin: 50px auto 100px auto;
+            padding: 40px 40px 68px 40px;
+            border-width: 2px;
+            border-color: #ada1ff;
+            border-style: solid;
+            border-radius: 10px;
+            box-shadow: 4px 4px #ada1ff;
+        }
+        
+        #forHead {
+            font-family: 'Belanosima', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        #NavBar {
+            background-color: #ada1ff;
+        }
+    </style>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include('header') %>
+        <img src="webSiteLogo.png" alt="WebSite Logo" height="60px" id="webSiteLogo">
+        <section id="ForgotContainer">
+            <h2 id="forHead">Forgot Account</h2>
+            <% if(flag == 1) { %>
+                <div class="alert alert-danger" role="alert">Please enter valid email address</div>
+                <%} %>
+                    <form action="/forgot" method="post">
+                        <div class="form-floating mb-4">
+                            <input type="email" class="form-control" id="emailForgot" placeholder="name@example.com" name="emailForgot">
+                            <label for="emailForgot">Email address</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-outline-primary" style="font-weight: 700;">Submit</button>
+                        </div>
+                    </form>
+        </section>
+        <%- include('footer') %>
+</body>
+
+</html>

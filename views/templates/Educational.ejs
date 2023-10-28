@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational_Event</title>
+    <style>
+        #NavBar {
+            background-color: rgb(0, 128, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("header2") %>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .img-rounded {
+                padding-top: 330px;
+                padding-left: 140px;
+                width: 850px;
+                height: 490px;
+            }
+            
+            .wrapper {
+                padding-left: 120px;
+                display: flex;
+                flex-direction: row;
+                gap: 13px;
+            }
+            
+            .card {
+                position: relative;
+                width: 390px;
+                height: 450px;
+                background: #fff;
+                border-radius: 10px;
+                transition: all 0.3s;
+            }
+            
+            .card:hover {
+                transform: scale(1.05);
+            }
+            
+            .input {
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+                appearance: none;
+                border: 1px solid #e5e5e5;
+                border-radius: 10px;
+                z-index: 10;
+                box-shadow: 1px 1px 10px #aaaaaa, -1px -1px 10px #ffffff;
+            }
+            
+            .input+.check::before {
+                content: "";
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 16px;
+                height: 16px;
+                border: 2px solid #d0d0d0;
+                border-radius: 50%;
+                background-color: #E8E8E8;
+            }
+            
+            .input:checked+.check::after {
+                content: '';
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 16px;
+                height: 16px;
+                background-color: rgba(255, 0, 0, 0.7);
+                border-radius: 50%;
+            }
+            
+            .input[value="standart"]:checked+.check::after {
+                background-color: rgba(255, 165, 0, 0.7);
+            }
+            
+            .input[value="premium"]:checked+.check::after {
+                background-color: rgba(0, 128, 0, 0.7);
+            }
+            
+            .input[value="basic"]:checked {
+                border: 1.5px solid rgba(255, 0, 0, 0.7);
+            }
+            
+            .input[value="standart"]:checked {
+                border: 1.5px solid rgba(255, 165, 0, 0.7);
+            }
+            
+            .input[value="premium"]:checked {
+                border: 1.5px solid rgba(0, 128, 0, 0.7);
+            }
+            
+            .label {
+                color: #323232;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+            
+            .label .title {
+                /* text-align: center; */
+                justify-content: center;
+                margin: 50px 0 0 30px;
+                font-weight: 900;
+                font-size: 45px;
+                font-family: 'Times New Roman', Times, serif;
+                letter-spacing: 1.5px;
+            }
+            
+            .label .price {
+                margin: 20px 0 0 15px;
+                font-size: 45px;
+                margin-left: 30px;
+                font-weight: 900;
+            }
+            
+            .label .span {
+                color: gray;
+                font-weight: 700;
+                font-size: 40px;
+            }
+            
+            .paragraph {
+                font-size: 20px;
+                padding-left: 0px;
+            }
+            
+            .container {
+                width: 550px;
+                background: #F8F9FD;
+                background: linear-gradient(0deg, rgb(249, 246, 246) 0%, rgb(244, 247, 251) 100%);
+                border-radius: 40px;
+                padding: 50px;
+                /* padding: 25px 35px; */
+                border: 5px solid rgb(255, 255, 255);
+                box-shadow: rgba(136, 114, 223, 0.878) 0px 30px 30px -20px;
+                margin: 20px;
+            }
+            
+            .heading {
+                text-align: center;
+                font-weight: 900;
+                font-size: 30px;
+                color: rgb(24, 39, 203);
+            }
+            
+            .form {
+                margin-top: 20px;
+            }
+            
+            .form .input {
+                width: 100%;
+                background: white;
+                border: none;
+                padding: 15px 20px;
+                border-radius: 20px;
+                margin-top: 15px;
+                box-shadow: #9e8bf2 0px 10px 10px -5px;
+                border-inline: 2px solid transparent;
+            }
+            
+            .form .input::-moz-placeholder {
+                color: rgb(170, 170, 170);
+            }
+            
+            .form .input::placeholder {
+                color: rgb(170, 170, 170);
+            }
+            
+            .form .input:focus {
+                outline: none;
+                border-inline: 2px solid #2d06c7;
+            }
+            
+            .form .login-button {
+                display: block;
+                width: 90%;
+                font-weight: bold;
+                font-size: 15px;
+                background: linear-gradient(45deg, rgb(55, 9, 156) 0%, rgb(54, 8, 140) 100%);
+                color: white;
+                padding-block: 13px;
+                padding-left: 2px;
+                margin: 20px auto;
+                border-radius: 20px;
+                box-shadow: rgba(93, 51, 229, 0.878) 0px 20px 10px -15px;
+                border: none;
+                transition: all 0.2s ease-in-out;
+            }
+            
+            .form .login-button:hover {
+                transform: scale(1.03);
+                box-shadow: rgba(43, 21, 208, 0.878) 0px 23px 10px -20px;
+            }
+            
+            .form .login-button:active {
+                transform: scale(0.95);
+                box-shadow: rgba(17, 13, 234, 0.878) 0px 15px 10px -10px;
+            }
+        </style>
+        <table>
+            <tr>
+                <td>
+                    <img src="addeve/edu_image.jpg" class="img-rounded" style="padding-top: 70px;" alt="BirthDay_Party">
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td style="font-size: 25px;font-family: 'Times New Roman', Times, serif;">
+                    <br>
+                    <br>
+                    <li>Enjoy your special Day !</li><br>
+                    <li>God bless You</li><br>
+                    <li>Enjoy your special Day !</li><br>
+                    <li>God bless You</li><br>
+                    <li>Happy BirthDay</li><br>
+                    <li>Enjoy your special Day !</li><br>
+                    <li>God bless You</li><br>
+                    <!-- <li>Enjoy your special Day !</li><br> -->
+                    <!-- <li>God bless You</li><br> -->
+                </td>
+            </tr>
+
+        </table>
+        <br><br><br><br><br>
+        <hr><br><br><br><br>
+
+        <div class="wrapper">
+            <div class="card">
+                <input class="input" type="radio" name="card" value="basic">
+                <span class="check"></span>
+                <label class="label">
+                <div class="title">Golden Perk</div>
+                <div class="price">
+                    <span class="span">$</span>
+                    1500
+                    <br>
+                    <hr style="width: 330px;">
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero at quidem omnis molestiae, ex ea quam obcaecati.</p>
+                </div>
+            </label>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="card">
+                <input class="input" type="radio" name="card" value="standart">
+                <span class="check"></span>
+                <label class="label">
+                <div class="title">Diamond Perk</div>
+                <div class="price">
+                    <span class="span">$</span>
+                    3000
+                    <br>
+                    <hr style="width: 330px;">
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero at quidem omnis molestiae, ex ea quam obcaecati.</p>
+                </div>
+            </label>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="card">
+                <input class="input" type="radio" name="card" value="premium">
+                <span class="check"></span>
+                <label class="label">
+                <div class="title">Premium Perk</div>
+                <div class="price">
+                    <span class="span">$</span>
+                    6000
+                    <br>
+                    <hr style="width: 330px;">
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero at quidem omnis molestiae, ex ea quam obcaecati.</p>
+                </div>
+            </label>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div><br><br><br><br>
+        <hr><br><br><br>
+
+        <table>
+            <tr>
+                <td style="padding-left: 420px;">
+                </td>
+                <td>
+                    <div class="container" style="width: 650px;">
+                        <div class="heading">Educational Event</div>
+                        <form action="/addEvent?etype=1" class="form" method="post">
+                            <label for="email">Email address</label>
+                            <input required="" class="input" type="email" name="email" id="email" placeholder="Email address" value="<%- log.email %>"><br><br>
+                            <label for="name">Full name</label>
+                            <input required="" class="input" type="name" name="name" id="name" placeholder="Full name" value="<%- log.firstname +" " +log.lastname%> "><br><br>
+                            <!-- <input required="" class="input" type="text" name="venue" id="venue" placeholder="Venue"><br><br> -->
+                            <label for="venue">Venue</label>
+                            <select class="form-select input" aria-label="Venue" id="venue" name="venue">
+                                <% for(var i=0; i<venues.length; i++) { %>
+                                    <option value="<%= venues[i].venueId %>"><%- venues[i].venueName %></option>
+                                <% } %>
+                                <!-- <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option> -->
+                            </select><br>
+                            <label for="fromDate">From date</label>
+                            <input class="input" type="date" name="fromDate" id="fromDate" placeholder="fromDate" required><br><br>
+                            <label for="fromDate">To date</label>
+                            <input class="input" type="date" name="toDate" id="toDate" placeholder="toDate" required><br><br>
+                            <input class="login-button" style="padding-left: 1px;" type="submit" value="Submit">
+                        </form>
+                    </div><br><br><br>
+                </td>
+            </tr>
+        </table>
+        <%- include("footer") %>
+</body>
+
+</html>

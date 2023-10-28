@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        #webSiteLogo {
+            display: block;
+            margin: 50px auto 0px auto;
+        }
+        
+        #LoginContainer {
+            width: 30%;
+            margin: 50px auto 100px auto;
+            padding: 40px 40px 68px 40px;
+            border-width: 2px;
+            border-color: #ada1ff;
+            border-style: solid;
+            border-radius: 10px;
+            box-shadow: 4px 4px #ada1ff;
+        }
+        
+        #logHead {
+            font-family: 'Belanosima', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        #NavBar {
+            background-color: #ada1ff;
+        }
+    </style>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include('header') %>
+        <img src="webSiteLogo.png" alt="WebSite Logo" height="60px" id="webSiteLogo">
+        <section id="LoginContainer">
+            <h2 id="logHead">Login</h2>
+            <% if(flag == 1) { %>
+                <div class="alert alert-success" role="alert">Your account is successfully created please login using your email id and password</div>
+                <%} else if(flag == 2) { %>
+                    <div class="alert alert-danger" role="alert">Please enter valid email address and password</div>
+                    <% } %>
+                        <form action="/Login" method="post" autocomplete="off">
+                            <div class="form-floating mb-4">
+                                <input type="email" class="form-control" id="emailLogin" placeholder="name@example.com" name="emailLogin" autocomplete="off" required>
+                                <label for="emailLogin">Email address</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="passwordLogin" placeholder="Password" required name="passwordLogin">
+                                        <label for="passwordLogin">Password</label>
+                                    </div>
+                                    <button style="border-radius: 10px; cursor:pointer;" onclick="showPass();" type="button" class="input-group-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 17 17" style="margin-bottom: 2px;">
+                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                            </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group has-validation">
+
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-outline-primary" style="font-weight: 700;">Sign In</button>
+                            </div>
+                        </form>
+                        <form action="/forgot" method="get">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-outline-primary mt-4" style="font-weight: 700;" onclick="">Forgot Password?</button>
+                            </div>
+                        </form>
+        </section>
+        <%- include('footer') %>
+</body>
+<script>
+    function showPass() {
+        var x = document.getElementById("passwordLogin");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+</html>
