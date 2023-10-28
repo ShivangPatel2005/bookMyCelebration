@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <style>
+            body {
+                background-image: url('background-image.jpg');
+                background-size: cover;
+                font-family: Arial, sans-serif;
+            }
+            
+            .container {
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 40px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 10px;
+                box-shadow: 0px 0px 30px #428bca9b;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            table,
+            th,
+            td {
+                border: 1px solid #ddd;
+            }
+            
+            th,
+            td {
+                padding: 15px;
+                text-align: left;
+            }
+            
+            th {
+                background-color: #428bca;
+                color: #fff;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            
+            tr:hover {
+                background-color: #ddd;
+            }
+            
+            .calendar {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .day {
+                width: 14.2857%;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .event {
+                background-color: #428bca;
+                color: #fff;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px;
+            }
+            
+            .footer {
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                position: fixed;
+                letter-spacing: 2px;
+                margin-top: 30px;
+                word-spacing: 5px;
+                bottom: 0;
+                width: 100%;
+            }
+            
+            #NavBar {
+                box-shadow: 0px 0px 30px #428bca9b;
+            }
+        </style>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+        <div class="container">
+            <h4 style="margin-bottom: 20px;">Upcoming Events</h4>
+            <table>
+                <tr>
+                    <th>Sr. no</th>
+                    <th>Event Type</th>
+                    <th>From date</th>
+                    <th>To date</th>
+                    <th>Location</th>
+                    <th>Organizer</th>
+                </tr>
+                <% if(eData.length > 0) { %>
+                    <% for(var i = 0; i < eData.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%- i+1 %>
+                            </td>
+                            <td>
+                                <% if(eData[i].eventType == 0) { %>
+                                    Birthday party
+                                    <% } else if(eData[i].eventType == 1) {  %>
+                                        Educational event
+                                        <% } else if(eData[i].eventType == 2) {  %>
+                                            Social event
+                                            <% } else if(eData[i].eventType == 3) {  %>
+                                                Corporate event
+                                                <% } %>
+                            </td>
+                            <td>
+                                <%- eData[i].fromDate.getDate()+"-"+(eData[i].fromDate.getMonth()+1)+"-"+eData[i].fromDate.getFullYear() %>
+                            </td>
+                            <td>
+                                <%- eData[i].toDate.getDate()+"-"+(eData[i].toDate.getMonth()+1)+"-"+eData[i].toDate.getFullYear() %>
+                            </td>
+                            <td>
+                                <% for(var j = 0; j < venues.length; j++) { %>
+                                    <% if(eData[i].venueId == venues[j].venueId) {  %>
+                                        <%- venues[j].venueLocation %>
+                                            <% } %>
+                                                <% } %>
+                            </td>
+                            <td>
+                                <%- eData[i].fullname %>
+                            </td>
+                        </tr>
+                        <% } %>
+                            <% } %>
+            </table>
+        </div>
+        <div class="footer">
+            @Copyright bookMyCelebration 2023 - All Right Reserved.
+        </div>
+</body>
+
+</html>

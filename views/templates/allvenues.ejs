@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <style>
+            body {
+                background-image: url('background-image.jpg');
+                background-size: cover;
+                font-family: Arial, sans-serif;
+            }
+            
+            .container {
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 50px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 10px;
+                box-shadow: 0px 0px 30px #5dca42d4;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            table,
+            th,
+            td {
+                border: 1px solid #ddd;
+            }
+            
+            th,
+            td {
+                padding: 15px;
+                text-align: left;
+            }
+            
+            th {
+                background-color: #5dca42;
+                color: #fff;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            
+            tr:hover {
+                background-color: #ddd;
+            }
+            
+            .calendar {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .day {
+                width: 14.2857%;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .event {
+                background-color: #428bca;
+                color: #fff;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px;
+            }
+            
+            .footer {
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                position: absolute;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                bottom: 0;
+                width: 100%;
+            }
+            
+            #NavBar {
+                box-shadow: 0px 0px 30px #5dca42aa;
+            }
+        </style>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+        <div class="container">
+            <h4 style="margin-bottom: 20px;">Venue list</h4>
+            <table>
+                <tr>
+                    <th>Sr. no</th>
+                    <th>Venue name</th>
+                    <th>Location</th>
+                    <th>Contact email</th>
+                    <th>Contact number</th>
+                </tr>
+                <% for(var i=0; i<venues.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%- i+1 %>
+                        </td>
+                        <td>
+                            <%- venues[i].venueName %>
+                        </td>
+                        <td>
+                            <%- venues[i].venueLocation %>
+                        </td>
+                        <td>
+                            <%- venues[i].venueEmail %>
+                        </td>
+                        <td>
+                            <%- venues[i].venueContact %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+        <div class="footer">
+            @Copyright bookMyCelebration 2023 - All Right Reserved.
+        </div>
+</body>
+
+</html>

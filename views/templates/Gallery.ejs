@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookMyCelebration Gallery</title>
+    <!-- <link rel="stylesheet" href="stylegallery.css"> -->
+    <link rel="icon" href="/titleLogo.png" type="image/icon type">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui;
+        }
+        
+        body {
+            background: fixed;
+        }
+        
+        .back {
+            /*background-color: whitesmoke;*/
+            background-image: url(MyGallery/back2.jpg);
+            background-size: cover;
+            background-blend-mode: hard-light;
+        }
+        
+        .heading {
+            color: rgb(78, 20, 99);
+            font-family: system-ui;
+            text-align: center;
+            font-size: 45px;
+            font-weight: 500;
+            background-color: rgb(210, 158, 209);
+            border-bottom: 3px solid;
+            padding-bottom: 10px;
+        }
+        
+        .img_gallery {
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 15px;
+        }
+        
+        .img_gallery img {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .img_gallery img:hover {
+            transform: scale(1.099) rotate(0deg);
+            border-radius: 15px;
+            box-shadow: 10px 32px 75px rgba(68, 77, 136, 0.2);
+        }
+        
+        .full_img {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .full_img img {
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .full_img span {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #NavBar {
+            background-color: rgba(4, 247, 255, 0.477);
+        }
+    </style>
+</head>
+
+<body>
+    <% if(access==0){ %>
+        <%- include("header") %>
+            <% } else if(access==1) { %>
+                <%- include("header2") %>
+                    <% } %>
+
+                        <div class="back">
+                            <!-- <section>
+                                <div class="heading">MyCelebrationGallery</div>
+                            </section> -->
+
+                            <div class="full_img" id="fullImgBox">
+                                <img src="MyGallery/img1.jpg" id="fullImg">
+                                <span onclick="closeFullImg()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="img_gallery">
+                                <div class="inner">
+                                    <img src="MyGallery/img1.jpg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img2.jpg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img3.webp" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img4.jpg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img5.jpg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img6.webp" onclick="openFullImg(this.src)">
+                                </div>
+                                <div class="inner">
+                                    <img src="MyGallery/img8.webp" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img9.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img10.jpg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img11.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img12.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img13.jpeg" onclick="openFullImg(this.src)">
+                                </div>
+                                <div class="inner">
+                                    <img src="MyGallery/img14.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img15.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img16.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img17.jpeg" onclick="openFullImg(this.src)">
+                                    <img src="MyGallery/img18.jpeg" onclick="openFullImg(this.src)">
+                                </div>
+                            </div>
+                            <script>
+                                var fullImgBox = document.getElementById("fullImgBox");
+                                var fullImg = document.getElementById("fullImg");
+
+                                function openFullImg(pic) {
+                                    fullImgBox.style.display = "flex";
+                                    fullImg.src = pic;
+                                }
+
+                                function closeFullImg() {
+                                    fullImgBox.style.display = "none";
+                                }
+                            </script>
+                        </div>
+                        <%- include("footer") %>
+</body>
+
+</html>
